@@ -17,7 +17,7 @@ public class program02 {
         driver.findElement(By.xpath("//input[@value='Cricket']")).click();
         driver.findElement(By.xpath("//input[@ng-model='FirstName']")).clear();
         //driver.findElement(By.xpath("//button[@id='Button1']")).click();
-	    driver.findElement(By.xpath("//select[@id='Skills']")).click();
+	    //driver.findElement(By.xpath("//select[@id='Skills']")).click();
 	}
 
 }
