@@ -2,6 +2,7 @@ package day01;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class program01 {
@@ -11,8 +12,10 @@ public class program01 {
 		driver=new ChromeDriver();
 		driver.get("https://www.amazon.in");
 		driver.findElement(By.xpath("//input[@dir='auto']")).sendKeys("java books");
-        driver.findElement(By.xpath("//input[@type='submit']")).click();
+       // driver.findElement(By.xpath("//input[@type='submit']")).click();
 	    driver.findElement(By.xpath(("//input[@dir='auto']"))).clear();
+	   WebElement x= driver.findElement(By.xpath("//span[@class='action-inner']"));
+	   x.click();
 	}
 
 }
