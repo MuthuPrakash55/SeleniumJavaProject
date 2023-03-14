@@ -9,11 +9,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class program03 {
 	static WebDriver driver;
 	public static void main(String[] args) throws IOException {
-		driver=new ChromeDriver();
+		driver=new EdgeDriver();
 		driver.get("https://demo.automationtesting.in/Register.html");
         driver.findElement(By.xpath("//input[@ng-model='FirstName']")).sendKeys("vijay");
         screenshot("First name");
