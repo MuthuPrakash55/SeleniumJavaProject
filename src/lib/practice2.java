@@ -1,4 +1,4 @@
-package practice;
+package selenium_practice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
@@ -28,4 +28,3 @@ public class practice2 {
 	}
 		
 }
-

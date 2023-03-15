@@ -1,14 +1,13 @@
 package practice;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class practice {
 
 	public static void main(String[] args) {
-		WebDriver driver=new ChromeDriver();
+		WebDriver driver=new EdgeDriver();
 		driver.get("https://letcode.in/edit");
 		driver.findElement(By.xpath("//input[@id=\"fullName\"]")).sendKeys("vijay");
 		driver.findElement(By.xpath("//input[@id=\"join\"]")).sendKeys(" person",Keys.TAB);;

@@ -1,5 +1,6 @@
 package practice;
 
+
 import java.io.File;
 import java.io.IOException;
 
@@ -8,14 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class practice4 {
 	static WebDriver driver;
 	public static void main(String[] args) throws IOException {
 		
-		driver=new ChromeDriver();
+		driver=new EdgeDriver();
 		driver.navigate().to("https://letcode.in/dropdowns");
 		driver.manage().window().maximize();
 		screenshot("dropdown page");
