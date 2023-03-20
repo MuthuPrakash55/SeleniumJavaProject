@@ -1,5 +1,5 @@
 package day04;
-
+     //Alerts - Ok & Cancel
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,6 @@ public class program04 {
 		WebDriver driver;
 		driver=new EdgeDriver();
 		driver.get("https://demo.automationtesting.in/Alerts.html");
-		Actions act=new Actions(driver);
 		
 		driver.findElement(By.xpath("//a[@href=\"#CancelTab\"]")).click();
 		driver.findElement(By.xpath("//button[@onclick=\"confirmbox()\"]")).click();

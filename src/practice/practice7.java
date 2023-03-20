@@ -1,24 +1,26 @@
-package day04;
-        //Mouse moving and click
+package practice;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class program03 {
+public class practice7 {
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver;
 		driver=new EdgeDriver();
-		driver.get("https://www.myntra.com/");
+		driver.get("https://www.meesho.com/");
 		Actions act=new Actions(driver);
 		
-		WebElement btn=driver.findElement(By.xpath("//a[@data-group=\"kids\"]"));
-		WebElement btn1=driver.findElement(By.xpath("//a[@data-reactid=\"381\"]"));
-		act.moveToElement(btn).build().perform();
+		WebElement health=driver.findElement(By.xpath("//span[text()='Beauty & Health']"));
+		WebElement care=driver.findElement(By.xpath("//a[text()='Oral Care']"));
+		act.moveToElement(health).click().build().perform();
 		Thread.sleep(3000);
-		act.click(btn1).build().perform();
+		act.click(care).build().perform();
+		
+		
 	}
 
 }

@@ -1,5 +1,5 @@
 package day04;
-
+            //click the context and click inside context
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +17,7 @@ public class program01 {
 	WebElement btn=	driver.findElement(By.xpath("//span[text()='right click me']"));
 	WebElement cpy=	driver.findElement(By.xpath("//span[text()='Copy']"));
 	act.contextClick(btn).click(cpy).build().perform();
+	driver.switchTo().alert().accept();
 	}
 
 }
