@@ -1,5 +1,9 @@
 package practice;
 
+import java.util.ArrayList;
+import java.util.Set;
+
+import org.checkerframework.checker.lock.qual.EnsuresLockHeld.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -19,24 +23,47 @@ public class windowHandle {
 		driver.findElement(By.xpath("//span[contains(text(),'Beginning Programming with Java')]"))
 		.click();
 		//System.out.println(driver.getWindowHandles());//3
+		driver.findElement(By.xpath("//span[text()='Java: The Complete Reference | 12th Edition']"))
+		.click();
+		
 		
 		for(String id:driver.getWindowHandles())
 		{
 			driver.switchTo().window(id);
-			if(driver.getCurrentUrl().contains("Core-Java-Integrated-Approach"))
+			
+			 if(driver.getTitle().contains("Beginning Programming with Java"))
+			{
+				driver.findElement(By.id("add-to-cart-button")).click();
+			}
+			else if(driver.getCurrentUrl().contains("Core-Java-Integrated-Approach"))
+				{
+					Select qty= new Select(driver.findElement(By.name("quantity")));
+					qty.selectByValue("6");
+					driver.findElement(By.id("add-to-cart-button")).click();
+				}
+			else if(driver.getCurrentUrl().contains("Java-Complete-Reference-Herbert-Schildt"))
 			{
 				Select qty= new Select(driver.findElement(By.name("quantity")));
 				qty.selectByValue("6");
 				driver.findElement(By.id("add-to-cart-button")).click();
 			}
-			else if(driver.getTitle().contains("Beginning Programming with Java"))
-			{
-				driver.findElement(By.id("add-to-cart-button")).click();
-			}
-			
 		}
+		Set<String> windows=driver.getWindowHandles();
+		java.util.List<String> handles=new ArrayList<>(windows);
+		driver.switchTo().window(handles.get(2));
+		System.out.println(driver.getCurrentUrl());
 		
-
+		Set<String> windows1=driver.getWindowHandles();
+		java.util.List<String> handles1=new ArrayList<>(windows1);
+		handles1.addAll(windows1);
+		
+		//driver.switchTo().window(handles.get(0));
+		//driver.close();
+		//driver.switchTo().window(handles.get(1));
+		//System.out.println(driver.getCurrentUrl());
+		driver.switchTo().window(handles.get(3));
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getWindowHandles().size());
 	}
 
 

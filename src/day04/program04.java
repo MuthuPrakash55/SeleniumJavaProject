@@ -11,7 +11,7 @@ public class program04 {
 	public static void main(String[] args) {
 		WebDriver driver;
 		driver=new EdgeDriver();
-		driver.get("https://demo.automationtesting.in/Alerts.html");
+		driver.get("https://demo.automationtesting.in/Alerts.html");		
 		
 		driver.findElement(By.xpath("//a[@href=\"#CancelTab\"]")).click();
 		driver.findElement(By.xpath("//button[@onclick=\"confirmbox()\"]")).click();
