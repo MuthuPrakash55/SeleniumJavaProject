@@ -10,14 +10,18 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class multiSelect {
 	static WebDriver driver;
 	public static void main(String[] args) throws IOException {
+		ChromeOptions opt=new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver(opt);
 		
-		driver=new EdgeDriver();
 		driver.get("https://letcode.in/dropdowns");
 		driver.manage().window().maximize();
 		WebElement heros=driver.findElement(By.xpath("//select[@id=\"superheros\"]"));
@@ -31,7 +35,7 @@ public class multiSelect {
 		WebElement lang=driver.findElement(By.xpath("//select[@id=\"lang\"]"));
 		Select lang1=new Select(lang);
 		lang1.selectByIndex(3);		
-		driver.close();
+		//driver.close();
 	}
 public static void screenshot(String filename) throws IOException {
 	File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

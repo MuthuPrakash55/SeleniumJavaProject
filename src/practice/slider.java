@@ -19,11 +19,12 @@ public class slider {
 		driver.manage().window().maximize();
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class=\"demo-frame\"]")));
 		
-		WebElement slide=driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
-		Actions act=new Actions(driver);
 		WebElement slider=driver.findElement(By.id("slider"));
 		System.out.println(slider.getLocation());
-		System.out.println(slide.getLocation()); //53,271
+		
+		WebElement slide=driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
+		Actions act=new Actions(driver);
+		System.out.println(slide.getLocation()); //53,271		
 		System.out.println(slide.getSize());
 		act.dragAndDropBy(slide,200, 0).perform();
 		System.out.println(slide.getLocation()); //53,271

@@ -7,13 +7,18 @@ import org.checkerframework.checker.lock.qual.EnsuresLockHeld.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class windowHandle {
 	static WebDriver driver;
 	public static void main(String[] args) {
-		driver = new EdgeDriver();
+		ChromeOptions opt=new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver(opt);
+		
 		driver.get("https://www.amazon.in/");
 		//System.out.println(driver.getWindowHandles());//1
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java"+Keys.ENTER);
@@ -53,16 +58,16 @@ public class windowHandle {
 		driver.switchTo().window(handles.get(2));
 		System.out.println(driver.getCurrentUrl());
 		
-		Set<String> windows1=driver.getWindowHandles();
-		java.util.List<String> handles1=new ArrayList<>(windows1);
-		handles1.addAll(windows1);
+	//	Set<String> windows1=driver.getWindowHandles();
+	//	java.util.List<String> handles1=new ArrayList<>(windows1);
+	//	handles1.addAll(windows1);
 		
 		//driver.switchTo().window(handles.get(0));
 		//driver.close();
 		//driver.switchTo().window(handles.get(1));
 		//System.out.println(driver.getCurrentUrl());
-		driver.switchTo().window(handles.get(3));
-		System.out.println(driver.getCurrentUrl());
+		//driver.switchTo().window(handles.get(3));
+		//System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getWindowHandles().size());
 	}
 
