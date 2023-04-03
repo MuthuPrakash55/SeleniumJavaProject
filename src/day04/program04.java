@@ -3,6 +3,7 @@ package day04;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -10,7 +11,7 @@ public class program04 {
 
 	public static void main(String[] args) {
 		WebDriver driver;
-		driver=new EdgeDriver();
+		driver=new ChromeDriver();
 		driver.get("https://demo.automationtesting.in/Alerts.html");		
 		
 		driver.findElement(By.xpath("//a[@href=\"#CancelTab\"]")).click();

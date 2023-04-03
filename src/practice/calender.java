@@ -1,11 +1,12 @@
 package practice;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
+
 
 public class calender {
 	
@@ -20,8 +21,8 @@ public class calender {
 		//driver.findElement(By.xpath("//label[@for='departure']")).click();
 		WebElement date=driver.findElement(By.xpath("//input[@id=\"onward_cal\"]"));
 		date.click();
-		String month="July";
-		String year="2025";
+		String month="july";
+		String year="2029";
 		while(true) {
 			String yearmonth=driver.findElement(By.xpath("//td[@class=\"monthTitle\"]")).getText();
 			String arr[]=yearmonth.split(" ");
@@ -35,7 +36,7 @@ public class calender {
 				
 				}
 		driver.findElement(By.xpath("//td[text()='25']")).click();
-			
+			driver.close();
 		}
 	}
 

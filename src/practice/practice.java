@@ -1,4 +1,5 @@
 package practice;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class practice {
 		System.out.println(enable);
 		String isreadonly=	driver.findElement(By.xpath("//input[@value=\"This text is readonly\"]")).getAttribute("readonly");
 		System.out.println(isreadonly);
-		driver.quit();
+		//driver.quit();
 	}
     
 }

@@ -1,17 +1,21 @@
 package day05;
-
+			//WEB TABLE
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class program01 {
 	static WebDriver driver;
-	public static void main(String[] args) {		
-		driver=new EdgeDriver();
+	public static void main(String[] args) {
+		ChromeOptions opt=new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");	
+		driver=new ChromeDriver(opt);
 		driver.get("https://demo.guru99.com/test/web-table-element.php");
 		headervalidation();
 		companyname();

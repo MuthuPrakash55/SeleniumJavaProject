@@ -1,15 +1,14 @@
 package practice;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
-import org.checkerframework.checker.lock.qual.EnsuresLockHeld.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class windowHandle {
@@ -54,8 +53,8 @@ public class windowHandle {
 			}
 		}
 		Set<String> windows=driver.getWindowHandles();
-		java.util.List<String> handles=new ArrayList<>(windows);
-		driver.switchTo().window(handles.get(2));
+		List<String>handles=new ArrayList<>(windows);
+		driver.switchTo().window(handles.get(1));
 		System.out.println(driver.getCurrentUrl());
 		
 	//	Set<String> windows1=driver.getWindowHandles();

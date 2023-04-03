@@ -6,12 +6,16 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class webtable1 {
 static WebDriver driver;
 	public static void main(String[] args) {
-		driver=new EdgeDriver();
+		ChromeOptions opt=new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver(opt);
 		driver.get("https://qavbox.github.io/demo/webtable/");
 		names("Herrod Chandler");
 		names("Airi Satou");
@@ -36,5 +40,6 @@ static WebDriver driver;
 			
 		}
 		System.out.println(name2);
+		System.out.println(rows);
 	}
 	}

@@ -24,10 +24,10 @@ public class slider {
 		
 		WebElement slide=driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
 		Actions act=new Actions(driver);
-		System.out.println(slide.getLocation()); //53,271		
+		System.out.println(slide.getLocation());		
 		System.out.println(slide.getSize());
-		act.dragAndDropBy(slide,200, 0).perform();
-		System.out.println(slide.getLocation()); //53,271
+		act.dragAndDropBy(slide,150, 0).perform();
+		System.out.println(slide.getLocation()); 
 		System.out.println(slide.getSize());
 	}
 
