@@ -21,7 +21,7 @@ public class webtable {
 		headervalidate();
 		 university();
 		int  size= driver.findElements(By.xpath("//div[@class=\"dataTables_paginate paging_full_numbers\"]//a")).size();
-	System.out.println(size);
+	//System.out.println(size);
 	}
 public static void headervalidate() {
 	List<WebElement> header=driver.findElements(By.xpath("//table[@name=\"table\"]//th"));
@@ -37,22 +37,24 @@ public static void headervalidate() {
 	}
 }
 public static void university() {
-	List<WebElement> name=driver.findElements(By.xpath("//table[@name=\"table\"]//tbody//td[2]"));
+	List<WebElement> name=driver.findElements(By.xpath("//table[@name=\"table\"]//tbody//tr//td"));
 	List<String> univname=new ArrayList<>();
 	
 	for(WebElement uname:name) {
 		univname.add(uname.getText());
 		}
 			
-		int  size= driver.findElements(By.xpath("//div[@class=\"dataTables_paginate paging_full_numbers\"]//a")).size();
+		//int  size= driver.findElements(By.xpath("//div[@class=\"dataTables_paginate paging_full_numbers\"]//a")).size();
 		
 		String next=driver.findElement(By.xpath("//*[@id=\"advancedtable_next\"]")).getAttribute("class");	
 		System.out.println(next);
+		
 		System.out.println("******************************************");
+		
 		while(!next.contains("disabled")) {
 			WebElement nextbutton=driver.findElement(By.xpath("//*[@id=\"advancedtable_next\"]"));
 			nextbutton.click();
-			 name=driver.findElements(By.xpath("//table[@id=\"advancedtable\"]//td[2]"));
+			 name=driver.findElements(By.xpath("//table[@id=\"advancedtable\"]//tr//td"));
 			 for(WebElement uname:name) {
 				univname.add(uname.getText());
 			 }
