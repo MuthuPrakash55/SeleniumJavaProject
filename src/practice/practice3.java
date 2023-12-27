@@ -21,6 +21,7 @@ public class practice3 {
 		mycountry.selectByValue("India");
 		WebElement select1=mycountry.getFirstSelectedOption();
 		System.out.println(select1.getText());
+		
 	}
 
 }

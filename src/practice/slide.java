@@ -20,6 +20,8 @@ public class slide {
 		
 		act.dragAndDropBy(slide, 10, 0);
 		act.build().perform();
+		System.out.println(slide.getSize());
+		System.out.println(slide.getLocation());
 		driver.findElement(By.xpath("/html/body/app-root/app-word-generator/section[1]/div/div/div[1]/div/div/div[1]/div[1]/button")).click();
 	
 		String name=driver.findElement(By.xpath("/html/body/app-root/app-word-generator/section[1]/div/div/div[1]/div/div/div[1]/div[2]/div/p")).getText();

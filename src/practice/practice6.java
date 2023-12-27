@@ -18,7 +18,6 @@ public class practice6 {
 		WebElement src=	driver.findElement(By.xpath("//*[@id=\"form:drag_content\"]"));
 		WebElement target=driver.findElement(By.xpath("//*[@id=\"form:drop_header\"]"));
 		act.dragAndDrop(src, target).build().perform();
-	
 		driver.close();
 	}
 

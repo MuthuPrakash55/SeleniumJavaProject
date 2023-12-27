@@ -67,9 +67,9 @@ public class amazon {
 		//driver.switchTo().window(list.get(2));
 		//System.out.println(driver.getCurrentUrl());
 	
-		driver.switchTo().window(list.get(1));
-		System.out.println(driver.getCurrentUrl());
-		driver.quit();
+//		driver.switchTo().window(list.get(1));
+//		System.out.println(driver.getCurrentUrl());
+//		driver.quit();
 		
 	}
 }
